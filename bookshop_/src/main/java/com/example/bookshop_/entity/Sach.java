@@ -35,17 +35,28 @@ public class Sach {
                     CascadeType.REFRESH,
                     CascadeType.DETACH})
     @JoinTable(
-            name = "sach_danhsachtheloai",
+            name = "sach_theloai",
             joinColumns = @JoinColumn(name = "ma_sach"),
             inverseJoinColumns = @JoinColumn(name = "ma_the_loai")
     )
-   private List<TheLoai> theLoai;
+    private List<TheLoai> theLoai;
 
-    List<HinhAnh> danhSachHinhAnh;
+    @OneToMany(mappedBy = "sach", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private List<HinhAnh> danhSachHinhAnh;
 
+    @OneToMany(mappedBy = "sach", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
     List<SuDanhGia> danhSachSuDanhGia;
 
+    @OneToMany(mappedBy = "sach", fetch = FetchType.LAZY,
+            cascade = {CascadeType.PERSIST,
+                    CascadeType.MERGE,
+                    CascadeType.REFRESH,
+                    CascadeType.DETACH})
     List<ChiTietDonHang> danhSachChiTietDonHang;
 
+    @OneToMany(mappedBy = "sach", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
     List<SachYeuThich> danhSachSachYeuThich;
 }
