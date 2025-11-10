@@ -1,10 +1,11 @@
 package com.example.bookshop_.dao;
 
 import com.example.bookshop_.entity.SachYeuThich;
+import com.example.bookshop_.entity.SuDanhGia;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 
 @RepositoryRestResource(path = "su-danh-gia")
-public interface SuDanhGiaRepository extends JpaRepository<SachYeuThich, Long> {
+public interface SuDanhGiaRepository extends JpaRepository<SuDanhGia, Long> {
 }

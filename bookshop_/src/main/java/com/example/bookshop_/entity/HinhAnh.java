@@ -20,7 +20,7 @@ public class HinhAnh {
     @Column(name = "duong_dan")
     @Lob // du lieu lon
     private String duongDan;
-    @Column(name = "du_lieu_anh")
+    @Column(name = "du_lieu_anh",columnDefinition = "LONGTEXT")
     private String duLieuAnh;
     @ManyToOne(cascade = {CascadeType.PERSIST,
             CascadeType.MERGE,
