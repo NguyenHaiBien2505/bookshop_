@@ -31,6 +31,10 @@ public class NguoiDung {
     private String diaChiMuaHang;
     @Column(name = "dia_chi_giao_hang")
     private String diaChiGiaoHang;
+    @Column(name = "da_kich_hoat")
+    private boolean daKichHoat;
+    @Column(name = "ma_kich_hoat")
+    private String maKichHoat;
 
     @OneToMany(mappedBy = "nguoiDung",
             cascade = {CascadeType.PERSIST,
@@ -46,7 +50,7 @@ public class NguoiDung {
                     CascadeType.DETACH})
     private List<SachYeuThich> danhSachSachYeuThich;
 
-    @ManyToMany(fetch = FetchType.LAZY,
+    @ManyToMany(fetch = FetchType.EAGER,
             cascade = {CascadeType.PERSIST,
                     CascadeType.MERGE,
                     CascadeType.REFRESH,

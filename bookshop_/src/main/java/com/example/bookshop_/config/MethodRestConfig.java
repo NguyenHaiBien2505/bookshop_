@@ -29,11 +29,11 @@ public class MethodRestConfig implements RepositoryRestConfigurer {
         config.exposeIdsFor(entityClasses);
 
         //CORS configuration
-        cors.addMapping("/**")
-                .allowedOrigins(url)
-                .allowedMethods("GET", "POST", "PUT", "DELETE")
-                .allowedHeaders("*")
-                .allowCredentials(true);
+//        cors.addMapping("/**")
+//                .allowedOrigins(url)
+//                .allowedMethods("GET", "POST", "PUT", "DELETE")
+//                .allowedHeaders("*")
+//                .allowCredentials(true);
 
         // Chặn các methods
         HttpMethod[] chanCacPhuongThuc = {
